@@ -40,11 +40,12 @@ public abstract class Futbolista implements Comparable<Futbolista> {
 	}
 public abstract boolean jugarConLasManos ();
 
-  public boolean equals (Futbolista f) {
+@Override  
+public  int compareTo (Futbolista f) {
 	if (this==f) {
-		return true;
+		return 0;
 	}
-	return false;
+	return 1;
 }
 
 
