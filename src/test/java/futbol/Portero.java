@@ -14,11 +14,8 @@ public class Portero extends Futbolista implements Comparable<Futbolista> {
 		return("El futbolista" + super.getNombre() + "tiene" + super.getEdad() + "y juega de" + super.getPosicion() + "con el dorsal" + this.dorsal +". Le han marcado" +this.golesRecibidos);
 	}
 	@Override
-	public boolean jugarConLasManos(Futbolista jugador) {
-		if (jugador instanceof Portero) {
+	public boolean jugarConLasManos() {
 			return true;
-			}
-			return false;
 }
 	//@Override
 	public int compareTo (Portero otroPortero) {

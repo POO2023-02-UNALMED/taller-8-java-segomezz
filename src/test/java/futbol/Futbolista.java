@@ -38,11 +38,9 @@ public abstract class Futbolista implements Comparable<Futbolista> {
 	public String toString() {
 		return ("El futbolista"+ getNombre() + "tiene" + getEdad() + ", y juega de " + getPosicion());
 	}
-public abstract boolean jugarConLasManos(Portero portero) {
-	if portero instanceof Portero;
-	return True;
-}
-public boolean equals (Futbolista f) {
+public abstract boolean jugarConLasManos ();
+
+  public boolean equals (Futbolista f) {
 	if (this==f) {
 		return true;
 	}
