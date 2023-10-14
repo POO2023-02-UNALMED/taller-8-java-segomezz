@@ -1,6 +1,6 @@
 package futbol;
 
-public class Portero extends Futbolista implements Comparable<Futbolista> {
+public class Portero extends Futbolista {
 	public short golesRecibidos;
 	public byte dorsal;
 	public Portero(String nombre,int edad,short golesRecibidos,byte dorsal) {
@@ -17,16 +17,10 @@ public class Portero extends Futbolista implements Comparable<Futbolista> {
 	public boolean jugarConLasManos() {
 			return true;
 }
-	//@Override
-	public int compareTo (Portero otroPortero) {
-		if (golesRecibidos != otroPortero.golesRecibidos) {
-            return Math.abs(Integer.compare(golesRecibidos, otroPortero.golesRecibidos));
-        }
-		return 0;
-}
 	@Override
-	public int compareTo(Futbolista o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    public int compareTo (Object other) {
+        var otroPortero = (Portero) other;
+        return otroPortero.golesRecibidos - golesRecibidos;
+    }
+
 }

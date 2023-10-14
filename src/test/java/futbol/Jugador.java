@@ -1,6 +1,6 @@
 package futbol;
 
-public class Jugador extends Futbolista implements Comparable<Futbolista>{
+public class Jugador extends Futbolista {
 	public short golesMarcados;
 	public byte dorsal;
 	public Jugador() {
@@ -13,13 +13,12 @@ public class Jugador extends Futbolista implements Comparable<Futbolista>{
 		this.golesMarcados=golesMarcados;
 		this.dorsal=dorsal;
 	}
-	@Override
-	public int compareTo(Futbolista otroFutbolista) {
-		if (getEdad() != otroFutbolista.getEdad()) {
-            return Math.abs(Integer.compare(getEdad(), otroFutbolista.getEdad()));
-        }
-		return 0;
-	}
+	   @Override
+	    public int compareTo(Object o) {
+	        var otroJugador = (Jugador) o;
+	        return super.getEdad() - otroJugador.getEdad() ;
+	    }
+	
 	@Override
 	public String toString() {
 		return("El futbolista" + super.getNombre() + "tiene" + super.getEdad() + "y juega de" + super.getPosicion() + "con el dorsal" + this.dorsal +". Ha marcado" +this.golesMarcados);
